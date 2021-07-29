@@ -1,0 +1,54 @@
+//if的快速入门
+import java.util.Scanner;//导入
+
+public class If02 {
+	public static void main(String[] args) {
+		
+		//案例
+		//编写一个程序，可以输入人的年龄，如果该同志的年龄大于18岁，
+		//则输出“你年龄大于18，要对自己的行为负责，送入监狱。”
+		//否则，输出“你的年龄不大这次放过你了。”
+		//
+		//思路分析
+		//1.接受输入的年龄，应该定义一个Scanner对象
+		//2.把年龄保存到一个变量 int age
+		//3.使用 if 判断，输出对应信息
+		//4.使用else 输出对应信息
+		
+		//应该定义一个Scanner对象
+		Scanner myScanner = new Scanner(System.in);
+		System.out.println("请输入年龄：");
+		//把年龄保存到一个变量 int age
+		int age = myScanner.nextInt();
+		//使用 if 判断，输出对应信息
+		//if {}内如果只有一条语句，{}可以省略
+		//但为了保证结构完整，建议不省略
+		if (age > 18) {
+			System.out.println("你年龄大于18，要对自己的行为负责，送入监狱。");			
+		}else {//双分支
+			System.out.println("你的年龄不大,这次放过你了。");
+		}
+		
+		System.out.println("程序继续...");
+	}
+}
+
+
+//分支控制if-else练习题
+//
+// 1.对下列代码，若有输出，指出输出结果。
+// int x = 7;
+// int y = 4;
+// if (x > 5) {
+// 	if (y > 5) {
+// 		System.out.println(x + y);
+// 	}
+// 		System.out.println("Do you Mind？");//正在听这首歌，来自Chris Brown
+// }else {
+// 	System.out.println("x is " + x);
+// }
+// 
+// 输出的内容是：
+// Do you Mind？
+
+
