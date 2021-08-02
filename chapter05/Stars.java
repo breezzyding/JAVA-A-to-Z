@@ -110,13 +110,13 @@ public class Stars {
 		//    * *		第8层
 		//     *		第9层
 
-		int totalLevel = 9;//表示层数		
+		int middleLevel = 5;//表示顶部到中间对称层的层数		
 
 		//打印空心菱形的上半部分
-		for (int i = 1; i <= totalLevel ; i++) {//i表示层数
+		for (int i = 1; i <= middleLevel ; i++) {//i表示层数
 
 			//在输出*之前，还要输出 对应空格 = 总层数-当前层
-			for (int k = 1; k <= totalLevel - i ; k++ ) {
+			for (int k = 1; k <= middleLevel - i ; k++ ) {
 				System.out.print(" ");				
 			}
 
@@ -133,17 +133,17 @@ public class Stars {
 		}
 
 		//打印空心菱形的下半部分
-		for (int i = 1; i <= totalLevel - 1 ; i++) {//i表示层数  //下半部分只有middleLevel减1
+		for (int i = 1; i <= middleLevel - 1 ; i++) {//i表示层数  
 
-			//在输出*之前，还要输出 对应空格 = 总层数-当前层
-			for (int k = 1; k <= i ; k++ ) {
+			//在输出*之前，还要输出 对应空格 = 当前层(i=1)
+			for (int k = 1; k <= i ; k++ ) {//输出i个空格
 				System.out.print(" ");				
 			}
 
-			//控制打印每层*的个数
-			for (int j = 1;j <= 2 * (totalLevel - i) - 1  ;j++ ) {
+			//控制打印每层*的个数  （不看空格）2 * (middleLevel - i) - 1			
+			for (int j = 1;j <= 2 * (middleLevel - i) - 1  ;j++ ) {
 				//当前行的第一个位置是*，最后一个位置也是*，最后一层全部输出
-				if(j == 1 || j == 2 * (totalLevel - i) - 1 ) {//妙呀
+				if(j == 1 || j == 2 * (middleLevel - i) - 1 ) {//妙呀
 					System.out.print("*");
 				}else {
 					System.out.print(" ");
@@ -153,3 +153,5 @@ public class Stars {
 		}		
 	}
 }	
+
+
