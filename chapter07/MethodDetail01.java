@@ -1,4 +1,4 @@
-public class MethodDetail {
+public class MethodDetail01 {
 	public static void main(String[] args) {
 		
 		//访问修饰符（作用是控制 方法使用的范围）
