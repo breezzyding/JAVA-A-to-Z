@@ -20,7 +20,7 @@ public class Teacher extends Person{
 
     //teach方法
     public void teach() {
-        System.out.println("我承诺,我会认真教学");
+        System.out.println(getName() + "我承诺,我会认真教学");
     }
 
     @Override
@@ -37,5 +37,13 @@ public class Teacher extends Person{
         teach();
         System.out.println(play());
         System.out.println("--------------------");
+    }
+
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "work_age=" + work_age +
+                '}' + super.toString();
     }
 }

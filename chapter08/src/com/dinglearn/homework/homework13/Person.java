@@ -51,4 +51,14 @@ public class Person {
     public String basicInfo() {
         return "姓名: " + name + "\n年龄: " + age + "\n性别: " + gender;
     }
+
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", gender=" + gender +
+                ", age=" + age +
+                '}';
+    }
 }
