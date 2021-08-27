@@ -3,6 +3,7 @@ package com.company.houserent.view;
 import com.company.houserent.domain.House;
 import com.company.houserent.service.HouseService;
 import com.company.houserent.utils.Utility;
+import sun.security.mscapi.CPublicKey;
 
 /**
  * 1.显示界面
@@ -33,25 +34,22 @@ public class HouseView {
                     addHouse();
                     break;
                 case '2':
-                    System.out.println("查找");
+                    findHouse();
                     break;
                 case '3':
-                    System.out.println("删除");
+                    deleteHouse();
                     break;
                 case '4':
-                    System.out.println("修改");
+                    updateHouse();
                     break;
                 case '5':
                     listHouse();
                     break;
                 case '6':
-                    System.out.println("退出");
-                    loop = false;
+                    exit();
                     break;
 
             }
-
-
 
         } while(loop);
     }
@@ -91,8 +89,103 @@ public class HouseView {
         } else {
             System.out.println("-------------添加失败-------------");
         }
+    }
 
+    //编写deleteHouse() 接受输入的id号,调用delete方法
+    public void deleteHouse() {
+        System.out.println("-------------删除房屋-------------");
+        System.out.print("请选择待删除房屋编号(-1退出):");
+        int deleteId = Utility.readInt();
+        if (deleteId == -1) {
+            System.out.println("-------------放弃删除房屋信息-------------");
+            return;
+        }
+        System.out.println("确认是否删除(Y/N),请小心选择。");
+        char choice = Utility.readConfirmSelection();//该方法本身就有循环判断的逻辑,必须输出Y/N
+        if (choice == 'Y') {//删除房屋
+            if (houseService.delete(deleteId)) {
+                System.out.println("-------------删除成功-------------");
+            } else {
+                System.out.println("-------------房屋编号不存在,删除失败-------------");
+            }
+        } else {
+            System.out.println("-------------放弃删除房屋信息-------------");
+        }
+    }
+
+    //编写exit() 完成退出确认
+    public void exit() {
+        //使用Utility提供方法,完成确认
+        char c = Utility.readConfirmSelection();
+        if (c == 'Y') {
+            loop = false;
+        }
+    }
+
+
+    //编写updateHouse() 修改房屋信息
+    public void updateHouse() {
+        System.out.println("-------------修改房屋信息-------------");
+        System.out.print("请选择待修改房屋编号(-1退出):");
+        int updateId = Utility.readInt();
+        if (updateId == -1) {
+            System.out.println("-------------放弃修改房屋信息-------------");
+            return ;
+        }
+
+        //根据输入得到updateId,查找对象
+        House house = houseService.findById(updateId);
+        if (house == null) {
+            System.out.println("-------------你想修改的房屋信息不存在-------------");
+            return ;
+        }
+
+        System.out.print("姓名("+house.getName()+"):");
+        String name = Utility.readString(8,"");//这里如果用户直接回车表示不修改该信息,默认""
+        if (!"".equals(name)) {//修改
+            house.setName(name);
+        }
+
+        System.out.print("电话("+house.getPhone()+"):");
+        String phone = Utility.readString(12);
+        if (!"".equals(phone)) {//修改
+            house.setPhone(phone);
+        }
+
+        System.out.print("地址("+house.getAddress()+"):");
+        String address = Utility.readString(16);
+        if (!"".equals(address)) {//修改
+            house.setAddress(address);
+        }
+
+        System.out.print("月租("+house.getRent()+")");
+        int rent = Utility.readInt(-1);
+        if (rent != -1) {//修改
+            house.setRent(rent);
+        }
+
+        System.out.print("状态("+house.getState()+")");
+        String state = Utility.readString(3);
+        if (!"".equals(state)) {//修改
+            house.setState(state);
+        }
+        System.out.println("-------------修改房屋信息成功-------------");
 
     }
+
+    //编写find() 查找房屋信息
+    public void findHouse() {
+        System.out.println("-------------查找房屋信息-------------");
+        System.out.print("请输入要查找的id:");
+        int findId = Utility.readInt();
+        //调用方法
+        House house = houseService.findById(findId);
+        if (house != null) {
+            System.out.println(house);
+        } else {
+            System.out.println("-------------查找房屋信息不存在-------------");
+        }
+    }
+
 
 }

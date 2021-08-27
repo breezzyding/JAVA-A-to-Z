@@ -1,6 +1,7 @@
 package com.company.houserent.service;
 
 import com.company.houserent.domain.House;
+import com.company.houserent.utils.Utility;
 
 /**
  * HouseService.java <=> 类 ---> 【业务层】
@@ -51,5 +52,47 @@ public class HouseService {
         //把idCounter++写进setId(idCounter)中
         newHouse.setId(++idCounter);
         return true;
+    }
+
+    //delete方法,删除一个房屋信息
+    public boolean delete(int deleteId) {
+
+        //应当先找到删除的房屋信息对应的下标
+        //deleteId与下标不是一回事,想想数组下标准则(从0开始)
+        int index = -1;
+        for (int i = 0; i < houseNums; i++) {
+            if (deleteId == houses[i].getId()) {//删除的房屋Id,在数组下标为i的元素
+                index = i;//就是用index记录i
+            }
+        }
+
+        if (index == -1) {//说明deleteId数组中不存在
+            return false;
+        }
+
+        //如果找到,怎么删除
+        //思路删除index处的房屋信息,采用覆盖的方法
+        //将index+1的房屋信息写入index处,再滞空最后数组中最后一个位置
+        for (int i = index; i < houseNums - 1; i++) {
+            houses[i] = houses[i + 1];
+        }
+//        houses[houseNums - 1] = null;
+//        houseNums--;
+//        可以简写成下面这种形式
+        //把当有存在的房屋信息的最后一个 设置成null
+        houses[--houseNums] = null;
+        return true;
+    }
+
+    //findById()方法 返回House对象或者null
+    public House findById(int findId) {
+        
+        //遍历
+        for (int i = 0; i < houseNums; i++) {
+            if (findId == houses[i].getId()) {
+                return houses[i];
+            }
+        }
+        return null;
     }
 }
