@@ -22,6 +22,7 @@ public class House {
         this.state = state;
     }
 
+    //getter & setter
     public int getId() {
         return id;
     }
@@ -73,7 +74,7 @@ public class House {
     //为了方便的输出对象信息,重写toString
     //编号    房屋    电话    地址    月租    状态(未出租/已出租)
     @Override
-    public String toString() {
+    public String toString() {//\t的个数根据实际输出来调整即可
         return id +
                 "\t\t" + name +
                 "\t" + phone +

@@ -3,7 +3,6 @@ package com.company.houserent.view;
 import com.company.houserent.domain.House;
 import com.company.houserent.service.HouseService;
 import com.company.houserent.utils.Utility;
-import sun.security.mscapi.CPublicKey;
 
 /**
  * 1.显示界面
@@ -12,14 +11,15 @@ import sun.security.mscapi.CPublicKey;
  */
 public class HouseView {
 
+    //属性
     private boolean loop = true;//控制显示菜单
-    private char key = ' ';//接受用户选择
-    private HouseService houseService = new HouseService(1);//设置数组的大小为10
+    private char key = ' ';//接收用户选择
+    private HouseService houseService = new HouseService(7);//设置数组的大小为7
 
     //显示主菜单
     public void mainMenu() {
 
-        do {
+        do {//选择do-while的原因,判断前,先输出一次。
             System.out.println("\n-------------房屋出租系统菜单-------------");
             System.out.println("\t\t\t1 新 增 房 源");
             System.out.println("\t\t\t2 查 找 房 屋");
@@ -28,34 +28,35 @@ public class HouseView {
             System.out.println("\t\t\t5 房 屋 列 表");
             System.out.println("\t\t\t6 退      出");
             System.out.print("请输入你的选择(1-6):");
-            key = Utility.readChar();
+            key = Utility.readChar();//接收用户选择
             switch (key) {
                 case '1':
-                    addHouse();
+                    addHouse();//新 增 房 源
                     break;
                 case '2':
-                    findHouse();
+                    findHouse();//查 找 房 屋
                     break;
                 case '3':
-                    deleteHouse();
+                    deleteHouse();//删 除 房 屋 信 息
                     break;
                 case '4':
-                    updateHouse();
+                    updateHouse();//修 改 房 屋 信 息
                     break;
                 case '5':
-                    listHouse();
+                    listHouse();//房 屋 列 表
                     break;
                 case '6':
-                    exit();
+                    exit();//退      出
                     break;
 
             }
 
-        } while(loop);
+        } while (loop);//循环控制
     }
 
-
-    //编写listHouses() 显示房屋列表
+    /**
+     * 编写listHouses() 显示房屋列表
+     */
     public void listHouse() {
         System.out.println("-------------房屋列表-------------");
         System.out.println("编号\t\t房屋\t\t电话\t\t地址\t\t月租\t\t状态(未出租/已出租)");
@@ -64,13 +65,15 @@ public class HouseView {
             if (houses[i] == null) {//如果为null,就不用再显示了
                 break;
             }
-            System.out.println(houses[i]);
+            System.out.println(houses[i]);//重写过toString方法了
         }
         System.out.println("-------------房屋列表显示完毕-------------");
     }
 
-    //编写addHouse() 接受用户输入,创建House对象,调用add方法
-    public void addHouse() {
+    /**
+     * 编写addHouse() 接受用户输入,创建House对象,调用add方法
+     */
+    public void addHouse() {//合理调用Utility中封装的方法,可大大加速开发速度
         System.out.println("-------------添加房屋-------------");
         System.out.print("姓名: ");
         String name = Utility.readString(8);
@@ -84,19 +87,21 @@ public class HouseView {
         String state = Utility.readString(3);
         //创建一个新的House对象,注意id是系统分配的,用户不能输入
         House newHouse = new House(0, name, phone, address, rent, state);
-        if (houseService.add(newHouse)) {
+        if (houseService.add(newHouse)) {//显然add()方法的返回类型是boolean
             System.out.println("-------------添加成功-------------");
         } else {
             System.out.println("-------------添加失败-------------");
         }
     }
 
-    //编写deleteHouse() 接受输入的id号,调用delete方法
+    /**
+     * 编写deleteHouse() 接受输入的id号,调用delete方法
+     */
     public void deleteHouse() {
         System.out.println("-------------删除房屋-------------");
         System.out.print("请选择待删除房屋编号(-1退出):");
         int deleteId = Utility.readInt();
-        if (deleteId == -1) {
+        if (deleteId == -1) {//-1 ---> 退出
             System.out.println("-------------放弃删除房屋信息-------------");
             return;
         }
@@ -113,58 +118,77 @@ public class HouseView {
         }
     }
 
-    //编写exit() 完成退出确认
+    /**
+     * 编写exit() 完成退出确认
+     */
     public void exit() {
         //使用Utility提供方法,完成确认
         char c = Utility.readConfirmSelection();
         if (c == 'Y') {
-            loop = false;
+            loop = false;//结束do-while循环
         }
     }
 
+    /**
+     * 编写find() 查找房屋信息
+     */
+    public void findHouse() {
+        System.out.println("-------------查找房屋信息-------------");
+        System.out.print("请输入要查找的id:");
+        int findId = Utility.readInt();
+        //调用方法
+        House house = houseService.findById(findId);//创建House类型变量house,接收返回的houses[i]对象
+        if (house != null) {//不为空
+            System.out.println(house);//重写toString
+        } else {
+            System.out.println("-------------查找房屋信息不存在-------------");
+        }
+    }
 
-    //编写updateHouse() 修改房屋信息
+    /**
+     * 编写updateHouse() 修改房屋信息
+     */
     public void updateHouse() {
         System.out.println("-------------修改房屋信息-------------");
         System.out.print("请选择待修改房屋编号(-1退出):");
         int updateId = Utility.readInt();
-        if (updateId == -1) {
+        if (updateId == -1) {//-1 ---> 退出
             System.out.println("-------------放弃修改房屋信息-------------");
-            return ;
+            return;
         }
 
         //根据输入得到updateId,查找对象
         House house = houseService.findById(updateId);
         if (house == null) {
             System.out.println("-------------你想修改的房屋信息不存在-------------");
-            return ;
+            return;
         }
 
-        System.out.print("姓名("+house.getName()+"):");
-        String name = Utility.readString(8,"");//这里如果用户直接回车表示不修改该信息,默认""
-        if (!"".equals(name)) {//修改
+        System.out.print("姓名(" + house.getName() + "):");
+        String name = Utility.readString(8, "");//这里如果用户直接回车表示不修改该信息,默认""
+        if (!"".equals(name)) {//输入的不是回车,就修改
             house.setName(name);
         }
 
-        System.out.print("电话("+house.getPhone()+"):");
+        System.out.print("电话(" + house.getPhone() + "):");
         String phone = Utility.readString(12);
         if (!"".equals(phone)) {//修改
             house.setPhone(phone);
         }
 
-        System.out.print("地址("+house.getAddress()+"):");
+        System.out.print("地址(" + house.getAddress() + "):");
         String address = Utility.readString(16);
         if (!"".equals(address)) {//修改
             house.setAddress(address);
         }
 
-        System.out.print("月租("+house.getRent()+")");
+        System.out.print("月租(" + house.getRent() + ")");
         int rent = Utility.readInt(-1);
         if (rent != -1) {//修改
             house.setRent(rent);
         }
 
-        System.out.print("状态("+house.getState()+")");
+        System.out.print("状态(" + house.getState() + ")");
         String state = Utility.readString(3);
         if (!"".equals(state)) {//修改
             house.setState(state);
@@ -172,20 +196,5 @@ public class HouseView {
         System.out.println("-------------修改房屋信息成功-------------");
 
     }
-
-    //编写find() 查找房屋信息
-    public void findHouse() {
-        System.out.println("-------------查找房屋信息-------------");
-        System.out.print("请输入要查找的id:");
-        int findId = Utility.readInt();
-        //调用方法
-        House house = houseService.findById(findId);
-        if (house != null) {
-            System.out.println(house);
-        } else {
-            System.out.println("-------------查找房屋信息不存在-------------");
-        }
-    }
-
 
 }
