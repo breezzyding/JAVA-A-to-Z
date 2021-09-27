@@ -56,13 +56,13 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
-  <component name="RunManager" selected="Application.Vector_">
-    <configuration name="ArrayListDetail" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dinglearn.list_.ArrayListDetail" />
+  <component name="RunManager" selected="Application.HashSetStructure">
+    <configuration name="HashSet01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dinglearn.set_.HashSet01" />
       <module name="chapter14" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dinglearn.list_.*" />
+          <option name="PATTERN" value="com.dinglearn.set_.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -70,12 +70,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArrayListSouce" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dinglearn.list_.ArrayListSouce" />
+    <configuration name="HashSetStructure" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dinglearn.set_.HashSetStructure" />
       <module name="chapter14" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dinglearn.list_.*" />
+          <option name="PATTERN" value="com.dinglearn.set_.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -83,12 +83,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ListExercise02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dinglearn.list_.ListExercise02" />
+    <configuration name="LinkedList01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dinglearn.list_.LinkedList01" />
       <module name="chapter14" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dinglearn.list_.*" />
+          <option name="PATTERN" value="com.dinglearn.set_.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -96,12 +96,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ListFor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dinglearn.list_.ListFor" />
+    <configuration name="LinkedListCRUD" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dinglearn.list_.LinkedListCRUD" />
       <module name="chapter14" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dinglearn.list_.*" />
+          <option name="PATTERN" value="com.dinglearn.set_.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -109,12 +109,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Vector_" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dinglearn.list_.Vector_" />
+    <configuration name="SetMethod" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dinglearn.set_.SetMethod" />
       <module name="chapter14" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dinglearn.list_.*" />
+          <option name="PATTERN" value="com.dinglearn.set_.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -122,26 +122,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Vector_" />
-        <item itemvalue="Application.ArrayListSouce" />
-        <item itemvalue="Application.ArrayListDetail" />
-        <item itemvalue="Application.ListExercise02" />
-        <item itemvalue="Application.ListFor" />
+        <item itemvalue="Application.HashSetStructure" />
+        <item itemvalue="Application.HashSet01" />
+        <item itemvalue="Application.SetMethod" />
+        <item itemvalue="Application.LinkedListCRUD" />
+        <item itemvalue="Application.LinkedList01" />
       </list>
     </recent_temporary>
   </component>
@@ -156,7 +154,8 @@
       <workItem from="1632454396877" duration="13821000" />
       <workItem from="1632549525243" duration="8938000" />
       <workItem from="1632562038776" duration="1000000" />
-      <workItem from="1632616922783" duration="17121000" />
+      <workItem from="1632616922783" duration="17716000" />
+      <workItem from="1632705639909" duration="17731000" />
     </task>
     <servers />
   </component>
@@ -176,42 +175,42 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1101" y="166" key="#com.intellij.ide.util.MemberChooser" timestamp="1632621225184">
+    <state x="1101" y="166" key="#com.intellij.ide.util.MemberChooser" timestamp="1632735913056">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1101" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1632621225184" />
-    <state width="904" height="330" key="GridCell.Tab.0.bottom" timestamp="1632645461526">
+    <state x="1101" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1632735913056" />
+    <state width="904" height="621" key="GridCell.Tab.0.bottom" timestamp="1632736331595">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="904" height="330" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1632645461526" />
-    <state width="904" height="330" key="GridCell.Tab.0.center" timestamp="1632645461525">
+    <state width="904" height="621" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1632736331595" />
+    <state width="904" height="621" key="GridCell.Tab.0.center" timestamp="1632736331594">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="904" height="330" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1632645461525" />
-    <state width="904" height="330" key="GridCell.Tab.0.left" timestamp="1632645461525">
+    <state width="904" height="621" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1632736331594" />
+    <state width="904" height="621" key="GridCell.Tab.0.left" timestamp="1632736331594">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="904" height="330" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1632645461525" />
-    <state width="904" height="330" key="GridCell.Tab.0.right" timestamp="1632645461526">
+    <state width="904" height="621" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1632736331594" />
+    <state width="904" height="621" key="GridCell.Tab.0.right" timestamp="1632736331594">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="904" height="330" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1632645461526" />
-    <state width="904" height="330" key="GridCell.Tab.1.bottom" timestamp="1632645461526">
+    <state width="904" height="621" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1632736331594" />
+    <state width="904" height="621" key="GridCell.Tab.1.bottom" timestamp="1632736331595">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="904" height="330" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1632645461526" />
-    <state width="904" height="330" key="GridCell.Tab.1.center" timestamp="1632645461526">
+    <state width="904" height="621" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1632736331595" />
+    <state width="904" height="621" key="GridCell.Tab.1.center" timestamp="1632736331595">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="904" height="330" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1632645461526" />
-    <state width="904" height="330" key="GridCell.Tab.1.left" timestamp="1632645461526">
+    <state width="904" height="621" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1632736331595" />
+    <state width="904" height="621" key="GridCell.Tab.1.left" timestamp="1632736331595">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="904" height="330" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1632645461526" />
-    <state width="904" height="330" key="GridCell.Tab.1.right" timestamp="1632645461526">
+    <state width="904" height="621" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1632736331595" />
+    <state width="904" height="621" key="GridCell.Tab.1.right" timestamp="1632736331595">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="904" height="330" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1632645461526" />
+    <state width="904" height="621" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1632736331595" />
     <state x="681" y="114" key="SettingsEditor" timestamp="1632549753601">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -220,20 +219,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1012" y="239" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1632627312421" />
-    <state x="1002" y="5" width="874" height="1034" key="search.everywhere.popup" timestamp="1632465660581">
+    <state x="1002" y="5" width="874" height="1034" key="search.everywhere.popup" timestamp="1632729637983">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1002" y="5" width="874" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1632465660581" />
+    <state x="1002" y="5" width="874" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1632729637983" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/dinglearn/list_/Vector_.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="table" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
